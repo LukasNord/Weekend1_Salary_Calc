@@ -21,14 +21,20 @@ class Employee {
     this.jobTitle=jobTitle;
     this.annualSalary=annualSalary;
   }//end constructor
+  monthlyCost(){
+    var mCost = (this.annualSalary / 12);
+    console.log(this.annualSalary);
 
+    return Number(mCost.toFixed(2));
+  }//end monthly Cost
+
+
+  //Write math methods here for later use.  Pushing the results to the DOM.
 }//end class
 
 
-
-
 function formSubmit(){
-  var employee = new Employee($('#firstName').val(),$('#lastName').val(),$('#idNum').val(),$('#jobTitle').val(),$('#annualSalary').val());
+  employee = new Employee($('#firstName').val(),$('#lastName').val(),$('#idNum').val(),$('#jobTitle').val(),$('#annualSalary').val());
 
   console.log(employee);
 
