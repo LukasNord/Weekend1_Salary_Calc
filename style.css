@@ -6,6 +6,38 @@ header{
   background-repeat: repeat-x;
 }
 
+
+body {
+
+}
+
+table, td {
+  border: 2px solid black;
+}
+
+td {
+  margin: 0;
+  width: 180px;
+  padding: 5px;
+}
+
+th {
+  background-color: #00ffff;
+  padding: 5px;
+}
+
+
+#monthlyCost{
+  border: 2px solid green;
+  padding: 5px;
+  width: 50%;
+  margin-top: 100px;
+
+
+
+
+
+}
 /* form{
   background-image: url(calc.png);
 
@@ -13,6 +45,6 @@ header{
 
 } */
 
-body{
+/* body{
   background-image: url('calcs.jpg');
-}
+} */

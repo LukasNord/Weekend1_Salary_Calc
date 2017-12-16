@@ -23,7 +23,7 @@ class Employee {
   }//end constructor
   monthlyCost(){
     var mCost = (this.annualSalary / 12);
-    console.log(this.annualSalary);
+
 
     return Number(mCost.toFixed(2));
   }//end monthly Cost
@@ -35,8 +35,22 @@ class Employee {
 
 function formSubmit(){
   employee = new Employee($('#firstName').val(),$('#lastName').val(),$('#idNum').val(),$('#jobTitle').val(),$('#annualSalary').val());
+  // $('#tableBody').append('<tr>');
 
-  console.log(employee);
+  var $row = $('tbody');
+  //console.log($row);
+  $row.append('<td>' + employee.firstName + '</td>');
+  $row.append('<td>' + employee.lastName + '</td>');
+  $row.append('<td>' + employee.idNum + '</td>');
+  $row.append('<td>' + employee.jobTitle + '</td>');
+  $row.append('<td>' + employee.annualSalary+ '</td>');
+  $row.append('<td class="montlyCost">' + employee.monthlyCost() + '</td>');
+
+  $('#tableBody').append('<tr>');
+
+
+  //console.log(employee);
+
 
 
 
