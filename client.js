@@ -6,9 +6,10 @@ $(document).ready(start);
 function start(){
   console.log('jQuery');
 $('#submit').on('click', formSubmit);
+$('#tableBody').on('click', 'button', deleteRow);
 
 
-}
+}// end start function
 
 
 
@@ -29,30 +30,42 @@ class Employee {
   }//end monthly Cost
 
 
-  //Write math methods here for later use.  Pushing the results to the DOM.
+
 }//end class
+
+var costArray = [];
 
 
 function formSubmit(){
+  var monthlyTotalCost = 0;
+  //create new employee object
   employee = new Employee($('#firstName').val(),$('#lastName').val(),$('#idNum').val(),$('#jobTitle').val(),$('#annualSalary').val());
-  // $('#tableBody').append('<tr>');
 
+  //save our employee cost data for future manipulation.
+  costArray.push( employee.monthlyCost() );
+  //send employee data to the DOM
   var $row = $('tbody');
-  //console.log($row);
   $row.append('<td>' + employee.firstName + '</td>');
   $row.append('<td>' + employee.lastName + '</td>');
   $row.append('<td>' + employee.idNum + '</td>');
   $row.append('<td>' + employee.jobTitle + '</td>');
   $row.append('<td>' + employee.annualSalary+ '</td>');
-  $row.append('<td class="montlyCost">' + employee.monthlyCost() + '</td>');
+  $row.append('<td class="monthlyCost">' + employee.monthlyCost() + '</td>');
+  $row.append('<button type="button" class="deleteRow">' + 'Delete' + '</button>');
+  $('#tableBody').append('<tr>'); //set the next row
 
-  $('#tableBody').append('<tr>');
-
-
-  //console.log(employee);
-
-
-
-
-
+  //Monthly total counter
+  for(var i= 0; i<costArray.length; i++){
+    monthlyTotalCost +=  costArray[i];
+  }//end for loop
+  //push monthly total to the DOM
+  $('#showCost').text(monthlyTotalCost);
+  //clear inputs
+  $('input').val('');
 }//end formSubmit
+
+
+function deleteRow(){
+  console.log($('this').closest('tr'));
+
+}

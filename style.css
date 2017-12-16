@@ -6,6 +6,15 @@ header{
   background-repeat: repeat-x;
 }
 
+table{
+  background-color: gray;
+
+}
+
+td{
+  background-color: white;
+
+}
 
 body {
 
@@ -24,6 +33,7 @@ td {
 th {
   background-color: #00ffff;
   padding: 5px;
+  border: 1px solid black;
 }
 
 
@@ -35,6 +45,15 @@ th {
 
 
 
+button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+
+}
+
+.deleteRow{
+  background-color: red;
 
 
 }
