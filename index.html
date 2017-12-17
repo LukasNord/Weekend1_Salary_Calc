@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.2.1.min.js" charset="utf-8"></script>
     <script src="client.js" charset="utf-8"></script>
@@ -13,27 +14,27 @@
 
     <div id="form">
       <form>
-        First name:<br>
-        <input type="text" name="firstname" id="firstName" placeholder="First Name" value="">
-        <br>
-        Last name:<br>
-        <input type="text" name="lastname" id=lastName placeholder="Last Name" value="">
-        <br>
-        ID Number:<br>
-        <input type="text" name="idNum" id="idNum" placeholder="ID Number" value="">
-        <br>
-        Job Title:<br>
-        <input type="text" name="jobtitle" id="jobTitle" placeholder="Job Title Here" value="">
-        <br>
-        Annual Salary:<br>
-        <input type="number" name="annualsalary" id="annualSalary" placeholder="Salary Here" value="">
-        <br>
-        <br>
-        <button type="button" name="submit" id="submit">Submit</button>
+        <p class="inputLabel">First name:<p>
+        <input type="text" name="firstname" id="firstName" placeholder="First Name" class="inputText" value="">
 
+        <p class="inputLabel">Last name:</p>
+        <input type="text" name="lastname" id=lastName placeholder="Last Name" class="inputText" value="">
+
+        <p class="inputLabel">ID Number:</p>
+        <input type="text" name="idNum" id="idNum" placeholder="ID Number" class="inputText" value="">
+
+        <p class="inputLabel">Job Title:</p>
+        <input type="text" name="jobtitle" id="jobTitle" placeholder="Job Title Here" class="inputText" value="">
+
+        <p class="inputLabel">Annual Salary:</p>
+        <input type="number" name="annualsalary" id="annualSalary" placeholder="Salary Here" class="inputText" value="">
 
       </form>
+    <button type="button" name="submit" id="submit">Submit</button>
+    <h2>Monthly Total Cost:</h2>
+    <h2 id="showCost"></h2>
     </div>
+
     <table>
       <thead>
           <tr>
@@ -46,17 +47,12 @@
           </tr>
       </thead>
         <tbody id="tableBody">
-
-
-
-
-
         </tbody>
 
     </table>
 
-    <h2> Employee Monthly Cost Total </h2>
-    <div id="showCost">PlaceHolder</div>
+
+
 
   </body>
 </html>

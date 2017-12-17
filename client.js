@@ -9,6 +9,7 @@ $('#submit').on('click', formSubmit);
 $('#tableBody').on('click', '.deleteRow', deleteRow);
 
 
+
 }// end start function
 class Employee {
 
@@ -66,7 +67,7 @@ function formSubmit(){
   var pushNewTotal = 0;
   pushNewTotal = monthlyTotalCost - totalDeletes;
   //push monthly total to the DOM
-  $('#showCost').text(pushNewTotal);
+  $('#showCost').text('$' +' ' + pushNewTotal);
   //clear inputs
   $('input').val('');
 }//end formSubmit
@@ -85,6 +86,6 @@ function deleteRow(){
     monthlyTotalCost +=  costArray[k];
   }//end for loop
   var pushNewTotal = monthlyTotalCost - totalDeletes;
-  $('#showCost').text(pushNewTotal);
+  $('#showCost').text('<p>$<p>' + pushNewTotal);
   $(this).parent().parent().remove();
 }//end deleteRow
