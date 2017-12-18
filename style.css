@@ -28,9 +28,10 @@ header{
   margin-bottom:0px;
 }
 
-table{
+#tableBody{
   background-color: white;
-  margin: auto;
+  margin: 50%;
+
 
 }
 td{
@@ -56,13 +57,8 @@ th {
   margin-bottom: 5px;
 }
 
-/* #monthlyCost{
-  border: 2px solid green;
-  padding: 5px;
-  width: 50%;
-  margin-top: 100px;
-  background-color: white;
-} */
+
+
 h2 {
   font-size: 24px;
   margin-top:0;

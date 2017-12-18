@@ -39,7 +39,7 @@ function formSubmit(){
   //send employee data to the DOM
   var $row = $('tbody:last-child');
 
-  $row.append('<tr><td>' + employee.firstName + '</td><td>' + employee.lastName + '</td><td>' + employee.idNum + '</td><td>' + employee.jobTitle + '</td><td>' + employee.annualSalary+ '</td><td class="monthlyCost">' + employee.monthlyCost() + '</td><td><button type="button" class="deleteRow">' + 'Delete' + '</button></td></tr>');
+  $row.append('<tr><td>' + employee.firstName + '</td><td>' + employee.lastName + '</td><td>' + employee.idNum + '</td><td>' + employee.jobTitle + '</td><td>' + employee.annualSalary+ '</td><td class="monthlyCost">' + employee.monthlyCost() + '</td><td id="deleteButton"><button type="button" class="deleteRow">' + 'Delete' + '</button></td></tr>');
 
   //  This whole Code block "worked", but wouldn't wrap my <td> block in a <tr> so i couldn't select for it later during the delete problem.
   //  Had to resort to the above code to force wrap the <tr></tr> around the data.  Would like to revisit this and figure out what i'm missing.
