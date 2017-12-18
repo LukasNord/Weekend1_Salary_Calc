@@ -18,7 +18,6 @@ class Employee {
     this.jobTitle=jobTitle;
     this.annualSalary=annualSalary;
   }//end constructor
-
   monthlyCost(){
     var mCost = (this.annualSalary / 12);
     return Number(mCost.toFixed(2));
@@ -54,8 +53,6 @@ function deleteRow(){
   }//end if statement
 }//end deleteRow
 
-
-
 //calculate monthlyCost and push to DOM
 function updateMonthly(){
   var monthlyTotalCost = 0;
@@ -69,5 +66,4 @@ function updateMonthly(){
   }//end for loop
   var pushNewTotal = (monthlyTotalCost - totalDeletes).toFixed(2);
   $('#showCost').text('$' + pushNewTotal);
-
-}
+}//end updateMonthly
