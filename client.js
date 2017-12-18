@@ -73,19 +73,24 @@ function formSubmit(){
 }//end formSubmit
 
 function deleteRow(){
-  //send deleted selection to an array.
-  trackDeletes.push(Number($(this).parent().prev().text()));
-  //create local counters
-  var monthlyTotalCost = 0;
-  var totalDeletes = 0;
 
-  for(var i = 0; i<trackDeletes.length;i++){
-    totalDeletes += trackDeletes[i];
-  }//end for loop
-  for(var k= 0; k<costArray.length; k++){
-    monthlyTotalCost +=  costArray[k];
-  }//end for loop
-  var pushNewTotal = monthlyTotalCost - totalDeletes;
-  $('#showCost').text('<p>$<p>' + pushNewTotal);
-  $(this).parent().parent().remove();
+  var confirm = window.confirm("Are You Sure?");
+  if (confirm == true){
+    //send deleted selection to an array.
+    trackDeletes.push(Number($(this).parent().prev().text()));
+    //create local counters
+    var monthlyTotalCost = 0;
+    var totalDeletes = 0;
+
+    for(var i = 0; i<trackDeletes.length;i++){
+      totalDeletes += trackDeletes[i];
+    }//end for loop
+    for(var k= 0; k<costArray.length; k++){
+      monthlyTotalCost +=  costArray[k];
+    }//end for loop
+    var pushNewTotal = monthlyTotalCost - totalDeletes;
+    $('#showCost').text('$' + pushNewTotal);
+
+    $(this).parent().parent().fadeOut();
+  }//end if statement
 }//end deleteRow
