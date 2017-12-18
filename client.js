@@ -57,6 +57,7 @@ function deleteRow(){
 function updateMonthly(){
   var monthlyTotalCost = 0;
   var totalDeletes = 0;
+  var totalAnnual = 0;
 
   for(var i = 0; i<trackDeletes.length;i++){
     totalDeletes += trackDeletes[i];
@@ -66,4 +67,10 @@ function updateMonthly(){
   }//end for loop
   var pushNewTotal = (monthlyTotalCost - totalDeletes).toFixed(2);
   $('#showCost').text('$' + pushNewTotal);
+
+  totalAnnual = Number((monthlyTotalCost - totalDeletes) * 12).toFixed(2);
+
+  $('#totalAnnual').text('$' + totalAnnual);
+
+
 }//end updateMonthly
