@@ -18,6 +18,7 @@ class Employee {
     this.jobTitle=jobTitle;
     this.annualSalary=annualSalary;
   }//end constructor
+
   monthlyCost(){
     var mCost = (this.annualSalary / 12);
     return Number(mCost.toFixed(2));
@@ -37,7 +38,7 @@ function formSubmit(){
   var $row = $('tbody:last-child');
   $row.append('<tr><td>' + employee.firstName + '</td><td>' + employee.lastName + '</td><td>' + employee.idNum + '</td><td>' + employee.jobTitle + '</td><td>' + employee.annualSalary+ '</td><td class="monthlyCost">' + employee.monthlyCost() + '</td><td id="deleteButton"><button type="button" class="deleteRow">' + 'Delete' + '</button></td></tr>');
 
-  updateMonthly(); //update monthly total
+  updateMonthly(); //calculate monthlyCost and push to DOM
   //clear inputs
   $('input').val('');
 }//end formSubmit
@@ -49,12 +50,14 @@ function deleteRow(){
     //send deleted selection to an array.
     trackDeletes.push(Number($(this).parent().prev().text()));
 
-    updateMonthly();
+    updateMonthly(); //calculate monthlyCost and push to DOM
     $(this).parent().parent().fadeOut('slow');
   }//end if statement
 }//end deleteRow
 
 
+
+//calculate monthlyCost and push to DOM
 function updateMonthly(){
   var monthlyTotalCost = 0;
   var totalDeletes = 0;
