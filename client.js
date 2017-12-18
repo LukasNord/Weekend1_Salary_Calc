@@ -7,10 +7,8 @@ function start(){
   console.log('jQuery');
 $('#submit').on('click', formSubmit);
 $('#tableBody').on('click', '.deleteRow', deleteRow);
-
-
-
 }// end start function
+
 class Employee {
 
   constructor(firstName,lastName,idNum,jobTitle,annualSalary){
@@ -30,7 +28,6 @@ var costArray = []; //track our monthly costs as they are submitted
 var trackDeletes = []; //track monthly costs as they are deleted
 
 function formSubmit(){
-
   //create new employee object
   employee = new Employee($('#firstName').val(),$('#lastName').val(),$('#idNum').val(),$('#jobTitle').val(),$('#annualSalary').val());
 
@@ -53,7 +50,7 @@ function deleteRow(){
     trackDeletes.push(Number($(this).parent().prev().text()));
 
     updateMonthly();
-    $(this).parent().parent().fadeOut();
+    $(this).parent().parent().fadeOut('slow');
   }//end if statement
 }//end deleteRow
 
@@ -68,7 +65,7 @@ function updateMonthly(){
   for(var k= 0; k<costArray.length; k++){
     monthlyTotalCost +=  costArray[k];
   }//end for loop
-  var pushNewTotal = monthlyTotalCost - totalDeletes;
+  var pushNewTotal = (monthlyTotalCost - totalDeletes).toFixed(2);
   $('#showCost').text('$' + pushNewTotal);
 
 }

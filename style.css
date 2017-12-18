@@ -36,6 +36,7 @@ header{
 }
 td{
   background-color: white;
+  text-align: center;
 
 
 }
@@ -95,7 +96,11 @@ button {
   margin-bottom: 10px;
   margin-top: 20px;
   font-size: 32px;
+}
 
+.deleteRow{
+  background-color: red;
+  padding: 5px 10px;
 }
 #submit:hover {
   background-color: #3e8e41;
