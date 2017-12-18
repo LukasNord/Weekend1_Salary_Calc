@@ -45,11 +45,10 @@ function formSubmit(){
 
 function deleteRow(){
 
-  var confirm = window.confirm("Are You Sure?");
+  var confirm = window.confirm("Are you sure you want to delete this row?");
   if (confirm == true){
     //send deleted selection to an array.
-    trackDeletes.push(Number($(this).parent().prev().text()));
-
+    trackDeletes.push(Number($(this).closest('tr').find('.monthlyCost').text()));
     updateMonthly(); //calculate monthlyCost and push to DOM
     $(this).parent().parent().fadeOut('slow');
   }//end if statement
