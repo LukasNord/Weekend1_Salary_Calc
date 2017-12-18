@@ -68,9 +68,8 @@ function updateMonthly(){
   var pushNewTotal = (monthlyTotalCost - totalDeletes).toFixed(2);
   $('#showCost').text('$' + pushNewTotal);
 
+  //update total annual cost
   totalAnnual = Number((monthlyTotalCost - totalDeletes) * 12).toFixed(2);
-
   $('#totalAnnual').text('$' + totalAnnual);
-
 
 }//end updateMonthly
